@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Happy New Year ❤️</title>
+  <style>
+    body {
+      background: linear-gradient(to right, #ff758c, #ff7eb3);
+      font-family: Arial, sans-serif;
+      text-align: center;
+      color: white;
+      padding-top: 70px;
+    }
+    .card {
+      background: rgba(255,255,255,0.25);
+      padding: 35px;
+      border-radius: 22px;
+      width: 360px;
+      margin: auto;
+      animation: fade 0.6s;
+    }
+    button {
+      margin-top: 25px;
+      padding: 10px 26px;
+      border-radius: 20px;
+      border: none;
+      background: white;
+      font-size: 16px;
+      cursor: pointer;
+    }
+    @keyframes fade {
+      from { opacity: 0; transform: scale(0.95); }
+      to { opacity: 1; transform: scale(1); }
+    }
+  </style>
+</head>
+<body>
+
+<div class="card" id="card">
+  <h1 id="title"></h1>
+  <p id="text"></p>
+  <button onclick="nextPage()">Next ➡️</button>
+</div>
+
+<script>
+  const pages = [
+    { title: "🎉 Happy New Year ❤️", text: "This is not just a wish… it’s something I made only for you 💕" },
+    { title: "💖 2025", text: "2025 became special the moment you came into my life ✨" },
+    { title: "📅 October", text: "That month changed everything for me, and I’ll always remember it 🥹" },
+    { title: "😊 You", text: "You make my normal days brighter and my hard days easier ❤️" },
+    { title: "🌸 Little Things", text: "Your care, your smile, your presence — they matter so much 💫" },
+    { title: "🤍 Thank You", text: "Thank you for being patient, kind, and real with me 🙏" },
+    { title: "🌈 2026 Wish", text: "Less worries, more smiles, and many moments together 💑" },
+    { title: "💌 A Promise", text: "I may not be perfect, but I’ll always try my best for you ❤️" },
+    { title: "🥹 From My Heart", text: "No matter what happens, you’ll always be special to me 💖" },
+    { title: "🎆 New Year", text: "Happy New Year my love ❤️ Let’s write another beautiful chapter together ✨" }
+  ];
+
+  let i = 0;
+
+  function showPage() {
+    document.getElementById("title").innerText = pages[i].title;
+    document.getElementById("text").innerText = pages[i].text;
+  }
+
+  function nextPage() {
+    i++;
+    if (i < pages.length) {
+      showPage();
+    } else {
+      document.getElementById("card").innerHTML =
+        "<h1>❤️ The End</h1><p>This was made with love, just for you 🥹💫</p>";
+    }
+  }
+
+  showPage();
+</script>
+
+</body>
+</html>
